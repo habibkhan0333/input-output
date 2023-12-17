@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+       justify-content: center;
+       align-items: center;
+        background-color: blue;
+        width: 100vw;
+        height: 100vh;
+    }
+    .container{
+        padding: 10px;
+        border: 5px solid rgb(249, 2, 2);
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: azure;
+        gap: 5px;
+       
+    }
+    
+    #inputBox{
+        width: 50vw;
+        height: 30px;
+        border: 3px solid red;
+        color: white;
+        border-radius: 40%;
+        text-align: center;
+        background-color: black;
+        
+    }
+    #selectOption{
+        border: 3px solid red;
+        width: 50vw;
+        height: 5vh;
+        color: white;
+        border-radius: 40%;
+        background-color: black;
+        text-align: center;
+    }
+    #outputBox{
+        width: 50vw;
+        height: 30vh;
+        border: 2px solid red;
+        border-radius: 10%;
+        color: white;
+        background-color: black;
+        text-align: center;
+    }
+</style>
+<body class="flex">
+ <div class="container flex">
+    <input type="text" id="inputBox" placeholder="name"placeholder.style="white" >
+    <select  id="selectOption">
+        <option value=Iphone">Iphone</option>
+        <option value="Tecno">Tecno</option>
+        <option value="Infinix">Infinix</option>
+        <option value="Sumsung">Sumsung</option>
+    </select>
+    <div id="outputBox"> 
+    </div>
+ </div>
+
+    <script>
+    function func1(){
+        let inputBox= document.getElementById("inputBox").value;
+        let selectOption= document.getElementById("selectOption").value;
+        let outputBox= document.getElementById("outputBox").innerHTML=`Your name is :${inputBox}<br> your mobile is :${selectOption}`
+
+    }
+    document.getElementById("inputBox").addEventListener("change" ,func1);
+    document.getElementById("selectOption").addEventListener("change" ,func1);
+
+    </script>
+</body>
+</html>
